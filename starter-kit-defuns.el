@@ -100,6 +100,11 @@ Symbols matching the text at point are put first in the completion list."
   (when *use-idle-highlight*
     (idle-highlight t)))
 
+(defun turn-on-line-numbers ()
+  (when (and (equal window-system 'x) *use-line-numbers*)
+    (global-linum-mode 1)
+    (setq linum-format "%d ")))
+
 (add-hook 'coding-hook 'local-column-number-mode)
 (add-hook 'coding-hook 'local-comment-auto-fill)
 (add-hook 'coding-hook 'turn-on-hl-line-mode)
@@ -108,6 +113,7 @@ Symbols matching the text at point are put first in the completion list."
 (add-hook 'coding-hook 'pretty-lambdas)
 (add-hook 'coding-hook 'add-watchwords)
 (add-hook 'coding-hook 'turn-on-idle-highlight)
+(add-hook 'coding-hook 'turn-on-line-numbers)
 
 (defun run-coding-hook ()
   "Enable things that are convenient across all coding buffers."

@@ -55,6 +55,14 @@
 (require 'ansi-color)
 (require 'recentf)
 
+(setq *use-highline-current-line* t
+      *use-save-place* t
+      *use-whitespace* t
+      *use-paredit* t
+      *use-watchwords* t
+      *use-idle-highlight* t
+      *use-line-numbers* t)
+
 ;; Load up starter kit customizations
 (require 'starter-kit-defuns)
 (require 'starter-kit-bindings)
@@ -68,13 +76,6 @@
 
 (if (boundp 'regen-autoloads) (regen-autoloads))
 (load custom-file 'noerror)
-
-(setq *use-highline-current-line* t
-      *use-save-place* t
-      *use-whitespace* t
-      *use-paredit* t
-      *use-watchwords* t
-      *use-idle-highlight* t)
 
 ;; You can keep system- or user-specific customizations here:
 (loop for name in (list system-name user-login-name)
