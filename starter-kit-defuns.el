@@ -34,15 +34,12 @@ Symbols matching the text at point are put first in the completion list."
                              (cond
                               ((and (listp symbol) (imenu--subalist-p symbol))
                                (addsymbols symbol))
-                              
                               ((listp symbol)
                                (setq name (car symbol))
                                (setq position (cdr symbol)))
-                              
                               ((stringp symbol)
                                (setq name symbol)
                                (setq position (get-text-property 1 'org-imenu-marker symbol))))
-                             
                              (unless (or (null position) (null name))
                                (add-to-list 'symbol-names name)
                                (add-to-list 'name-and-pos (cons name position))))))))
@@ -78,33 +75,40 @@ Symbols matching the text at point are put first in the completion list."
   (auto-fill-mode t))
 
 (defun turn-on-hl-line-mode ()
-  (when (> (display-color-cells) 8) (hl-line-mode t)))
+  (when (and (> (display-color-cells) 8) *use-highline-current-line*)
+    (hl-line-mode t)))
 
 (defun turn-on-save-place-mode ()
-  (setq save-place t))
+  (when *use-save-place*
+    (setq save-place t)))
 
 (defun turn-on-whitespace ()
-  (whitespace-mode t))
+  (when *use-whitespace*
+    (whitespace-mode t)))
 
 (defun turn-on-paredit ()
-  (paredit-mode t))
-
-(defun turn-off-tool-bar ()
-  (tool-bar-mode -1))
+  (when *use-paredit*
+    (paredit-mode t)))
 
 (defun add-watchwords ()
-  (font-lock-add-keywords
-   nil '(("\\<\\(FIX\\|TODO\\|FIXME\\|HACK\\|REFACTOR\\):"
-          1 font-lock-warning-face t))))
+  (when *use-watchwords*
+    (font-lock-add-keywords nil
+                            '(("\\<\\(FIX\\|TODO\\|FIXME\\|HACK\\|REFACTOR\\):"
+                               1 font-lock-warning-face t)))))
+
+(defun turn-on-idle-highlight ()
+  (when *use-idle-highlight*
+    (idle-highlight t)))
 
 (add-hook 'coding-hook 'local-column-number-mode)
 (add-hook 'coding-hook 'local-comment-auto-fill)
 (add-hook 'coding-hook 'turn-on-hl-line-mode)
 (add-hook 'coding-hook 'turn-on-save-place-mode)
+(add-hook 'coding-hook 'turn-on-whitespace)
 (add-hook 'coding-hook 'pretty-lambdas)
 (add-hook 'coding-hook 'add-watchwords)
-(add-hook 'coding-hook 'idle-highlight)
-  
+(add-hook 'coding-hook 'turn-on-idle-highlight)
+
 (defun run-coding-hook ()
   "Enable things that are convenient across all coding buffers."
   (run-hooks 'coding-hook))

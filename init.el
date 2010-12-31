@@ -69,6 +69,13 @@
 (if (boundp 'regen-autoloads) (regen-autoloads))
 (load custom-file 'noerror)
 
+(setq *use-highline-current-line* t
+      *use-save-place* t
+      *use-whitespace* t
+      *use-paredit* t
+      *use-watchwords* t
+      *use-idle-highlight* t)
+
 ;; You can keep system- or user-specific customizations here:
 (loop for name in (list system-name user-login-name)
       for file = (dotemacs name ".el") do
