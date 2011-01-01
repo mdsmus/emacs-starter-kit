@@ -73,6 +73,10 @@
       *use-delete-trailing-whitespace* nil
       )
 
+;; Load custom snippets
+
+(yas/load-directory snippet-dir)
+
 ;; Load up starter kit customizations
 (require 'starter-kit-defuns)
 (require 'starter-kit-bindings)
@@ -88,8 +92,6 @@
 
 (if (fboundp 'regen-autoloads) (regen-autoloads))
 (load custom-file 'noerror)
-
-(yas/load-directory snippet-dir)
 
 ;; You can keep system- or user-specific customizations here:
 (loop for name in (list system-name user-login-name)

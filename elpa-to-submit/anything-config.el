@@ -212,7 +212,7 @@
 ;; `anything-eval-expression'
 ;; Preconfigured anything for `anything-c-source-evaluation-result'.
 ;; `anything-eval-expression-with-eldoc'
-;; Preconfigured anything for `anything-c-source-evaluation-result' with `eldoc' support. 
+;; Preconfigured anything for `anything-c-source-evaluation-result' with `eldoc' support.
 ;; `anything-surfraw'
 ;; Preconfigured `anything' to search PATTERN with search ENGINE.
 ;; `anything-emms-stream-edit-bookmark'
@@ -2046,7 +2046,7 @@ Useful in dired buffers when there is inserted subdirs."
   (if (eq major-mode 'dired-mode)
       (dired-current-directory)
       default-directory))
-  
+
 (defun anything-find-files-input (fap tap)
   "Default input of `anything-find-files'."
   (let* ((def-dir (anything-c-current-directory))
@@ -3143,7 +3143,7 @@ http://www.nongnu.org/bm/")
                                 when (string-match "^(ssh)" i)
                                 collect i)))))
     (sort lis-loc 'string-lessp)))
-  
+
 (defun anything-c-bookmark-root-logged-p ()
   (catch 'break
     (dolist (i (mapcar #'buffer-name (buffer-list)))
@@ -5280,7 +5280,7 @@ Line is parsed for BEG position to END position."
         (num-line (if (string= anything-pattern "") beg (1- beg))))
     (when (and regexp (string-match regexp str-line))
       (format "%4d:%s" (line-number-at-pos num-line) str-line))))
-        
+
 
 (defvar anything-c-source-browse-code
   '((name . "Browse code")
