@@ -20,6 +20,7 @@
 
 (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'emacs-lisp-mode-hook 'esk-remove-elc-on-save)
+(add-hook 'emacs-lisp-mode #'(lambda () (setq autopair-dont-activate t)))
 
 (defun esk-remove-elc-on-save ()
   "If you're saving an elisp file, likely the .elc is no longer valid."
@@ -70,6 +71,8 @@
 (eval-after-load 'slime-repl
   '(define-key slime-repl-mode-map (kbd "C-c p")
      'slime-pprint-eval-last-expression))
+
+(add-hook 'lisp-mode #'(lambda () (setq autopair-dont-activate t)))
 
 (provide 'starter-kit-lisp)
 ;; starter-kit-lisp.el ends here

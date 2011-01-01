@@ -55,6 +55,8 @@
 (require 'ansi-color)
 (require 'recentf)
 (require 'elscreen)
+(require 'autopair)
+(autopair-global-mode)
 
 (setq *use-highline-current-line* t
       *use-save-place* t
