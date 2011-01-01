@@ -1,14 +1,23 @@
-;; -*- Mode: Emacs-Lisp -*-
-;;
-;; elscreen.el
-;;
-(defconst elscreen-version "1.4.6 (December 30, 2007)")
-;;
-;; Author:   Naoto Morishima <naoto@morishima.net>
+;;; elscreen.el --- window session manager modeled after GNU screen
+
+;;;; License
+;;     Copyright (C) 2007, 2008, 2009, 2010 Naoto Morishima
+;;     Copyright (C) 2011  Pedro Kroger
+;; Author:   Pedro Kroger <pedro.kroger@gmail.com>
+;; Based on: elscreen.el
+;;              by Naoto Morishima <naoto@morishima.net>
 ;; Based on: screens.el
 ;;              by Heikki T. Suopanki <suopanki@stekt1.oulu.fi>
 ;; Created:  June 22, 1996
-;; Revised:  December 30, 2007
+;; Revised:  December 30, 2007 (Naoto Morishima)
+;; Revised:  January 1, 2011 (Pedro Kroger)
+;; Version: 1.5.0
+
+;; This file is NOT part of GNU Emacs.
+
+;; Changes:
+;; * added all dependencies here so it can be distributed as one file
+;; * fixed old style backquotes
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -23,6 +32,8 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program; see the file COPYING.  If not, write to
 ;; the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
+
+(defconst elscreen-version "1.5.0 (January 1, 2011)")
 
 ;;;; dependencies
 
