@@ -54,6 +54,7 @@
 (require 'uniquify)
 (require 'ansi-color)
 (require 'recentf)
+(require 'elscreen)
 
 (setq *use-highline-current-line* t
       *use-save-place* t
