@@ -61,7 +61,10 @@
       *use-paredit* t
       *use-watchwords* t
       *use-idle-highlight* t
-      *use-line-numbers* t)
+      *use-line-numbers* t
+      *use-save-as-executable* t
+      *use-delete-trailing-whitespace* nil
+      )
 
 ;; Load up starter kit customizations
 (require 'starter-kit-defuns)
@@ -74,7 +77,7 @@
 (require 'starter-kit-ruby)
 (require 'starter-kit-js)
 
-(if (boundp 'regen-autoloads) (regen-autoloads))
+(if (fboundp 'regen-autoloads) (regen-autoloads))
 (load custom-file 'noerror)
 
 ;; You can keep system- or user-specific customizations here:

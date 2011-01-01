@@ -105,6 +105,17 @@ Symbols matching the text at point are put first in the completion list."
     (global-linum-mode 1)
     (setq linum-format "%d ")))
 
+(defun turn-on-save-as-executable ()
+  (when *use-save-as-executable*
+    (executable-make-buffer-file-executable-if-script-p)))
+
+(defun turn-on-delete-trailing-whitespace ()
+  (when *use-delete-trailing-whitespace*
+    (delete-trailing-whitespace)))
+
+;;; save hooks
+(add-hook 'before-save-hook 'turn-on-delete-trailing-whitespace)
+(add-hook 'after-save-hook 'turn-on-save-as-executable)
 (add-hook 'coding-hook 'local-column-number-mode)
 (add-hook 'coding-hook 'local-comment-auto-fill)
 (add-hook 'coding-hook 'turn-on-hl-line-mode)
