@@ -3,6 +3,10 @@
 ;; Part of the Emacs Starter Kit
 
 (require 'ipython)
+(require 'anything-ipython)
+
+(when (require 'anything-show-completion nil t)
+  (use-anything-show-completion 'anything-ipython-complete '(length initial-pattern)))
 
 (global-set-key "\C-ch" 'pylookup-lookup)
 
@@ -18,6 +22,11 @@
 
 (unless (file-exists-p pylookup-db-file)
   (python-update-documentation-table))
+
+(add-hook 'python-mode-hook
+          #'(lambda ()
+              (define-key py-mode-map (kbd "C-c M") 'anything-ipython-import-modules-from-buffer)
+              (define-key py-mode-map (kbd "M-<tab>") 'anything-ipython-complete)))
 
 (add-hook 'python-mode-hook 'run-coding-hook)
 
