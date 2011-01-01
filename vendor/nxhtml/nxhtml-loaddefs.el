@@ -4431,7 +4431,7 @@ Not documented
 ;;;;;;  "../../../../.emacs.d/vendor/nxhtml/util/org-panel.el" "../../../../.emacs.d/vendor/nxhtml/util/rxi.el"
 ;;;;;;  "../../../../.emacs.d/vendor/nxhtml/util/useful-commands.el"
 ;;;;;;  "../../../../.emacs.d/vendor/nxhtml/web-autoload.el") (19743
-;;;;;;  5468 621591))
+;;;;;;  6459 574640))
 
 ;;;***
 
