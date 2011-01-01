@@ -1,0 +1,12 @@
+#name : New mod
+# --
+:mod:\`${1:name}\` --- ${2:description}
+${1:$(make-string (+ (string-width text) 12) ?\-)}${2:$(make-string (string-width text) ?\-)}
+
+.. module:: $1
+   :synopsis: $2.
+
+.. index:: module: $3
+
+$0
+

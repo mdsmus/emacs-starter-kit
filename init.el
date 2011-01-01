@@ -31,8 +31,12 @@
 
 ;; Load path etc.
 (setq dotfiles-dir (file-name-directory (or (buffer-file-name) load-file-name)))
+(setq elpa-to-submit-dir (dotemacs "elpa-to-submit/"))
+(setq tools-dir (dotemacs "tools/"))
+(setq snippet-dir (dotemacs "my-snippets/"))
+
 (add-to-list 'load-path dotfiles-dir)
-(add-to-list 'load-path (dotemacs "elpa-to-submit"))
+(add-to-list 'load-path elpa-to-submit-dir)
 (setq autoload-file (dotemacs "loaddefs.el"))
 (setq package-user-dir (dotemacs "elpa"))
 (setq custom-file (dotemacs "custom.el"))
@@ -78,10 +82,13 @@
 (require 'starter-kit-lisp)
 (require 'starter-kit-perl)
 (require 'starter-kit-ruby)
+(require 'starter-kit-python)
 (require 'starter-kit-js)
 
 (if (fboundp 'regen-autoloads) (regen-autoloads))
 (load custom-file 'noerror)
+
+(yas/load-directory snippet-dir)
 
 ;; You can keep system- or user-specific customizations here:
 (loop for name in (list system-name user-login-name)

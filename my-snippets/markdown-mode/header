@@ -1,0 +1,7 @@
+Subject: $1
+Keywords: $2
+From: kroger
+Newsgroup: Test wordpress
+--text follows this line--
+
+# $0

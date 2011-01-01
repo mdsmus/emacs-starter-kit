@@ -1,0 +1,5 @@
+#name : Data
+# --
+.. data:: ${1:name}
+
+   $0

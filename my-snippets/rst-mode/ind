@@ -1,0 +1,5 @@
+#name : Index
+# --
+.. index:: ${1:single}: $2
+
+$0

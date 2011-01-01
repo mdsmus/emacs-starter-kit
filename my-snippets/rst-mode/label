@@ -1,0 +1,8 @@
+#name : Label with section
+# --
+.. _${1:label}:
+
+${2:Section}
+${2:$(make-string (string-width text) ?\-)}
+
+$0

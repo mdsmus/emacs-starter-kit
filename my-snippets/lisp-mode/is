@@ -1,0 +1,1 @@
+$>(is (${compare} ${result} (${function} ${args})))
