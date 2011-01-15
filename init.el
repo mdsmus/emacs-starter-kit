@@ -59,8 +59,9 @@
 (require 'ansi-color)
 (require 'recentf)
 (require 'elscreen)
-(require 'autopair)
-(autopair-global-mode)
+;;(require 'autopair)
+;;(autopair-global-mode)
+(electric-pair-mode t)
 
 (setq *use-highline-current-line* t
       *use-save-place* t
@@ -88,7 +89,8 @@
 (require 'starter-kit-ruby)
 (require 'starter-kit-python)
 (require 'starter-kit-js)
-(require 'starter-kit-nxhtml)
+;; FIXME global debug-on-error
+;; (require 'starter-kit-nxhtml)
 
 (if (fboundp 'regen-autoloads) (regen-autoloads))
 (load custom-file 'noerror)

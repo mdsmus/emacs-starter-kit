@@ -3,7 +3,7 @@
       *use-idle-highlight* nil)
 
 (setq visible-bell nil
-      browse-url-browser-function 'browse-url-chrome)
+      browse-url-browser-function 'browse-url-firefox)
 
 (if (equal window-system 'x)
     (set-default-font "Consolas-12"))

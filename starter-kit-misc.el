@@ -49,6 +49,10 @@
 ;; (setq browse-url-browser-function 'browse-url-generic
 ;;       browse-url-generic-program "~/src/conkeror/conkeror")
 
+;; comint
+(setq comint-completion-autolist t
+      comint-completion-recexact nil)
+
 ;; Transparently open compressed files
 (auto-compression-mode t)
 
