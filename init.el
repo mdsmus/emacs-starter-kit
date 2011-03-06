@@ -88,6 +88,7 @@
 (require 'starter-kit-perl)
 (require 'starter-kit-ruby)
 (require 'starter-kit-python)
+(require 'starter-kit-lilypond)
 (require 'starter-kit-js)
 ;; FIXME global debug-on-error
 ;; (require 'starter-kit-nxhtml)
